@@ -54,7 +54,7 @@ long end_timer() {
 int main(int argc, char *argv[]) {
 	//=== loop counter
 	//	int k = 0;
-
+	
 	//logfile=fopen("log_file","w");
 	//long timestamp=0;
 
@@ -154,15 +154,15 @@ int main(int argc, char *argv[]) {
 		cvShowImage(FEAT_WINDOW, prev_frame);
 
 		//=== Call The Lucas Kanade Algorithm
-		char features_found[ MAX_CORNERS ];
-		float feature_errors[ MAX_CORNERS ];
+		char features_found[ corner_count ];
+		float feature_errors[ corner_count ];
 
 		CvSize pyr_sz = cvSize( prev_gray_frame->width+8, curr_gray_frame->height/3 );
 
 		IplImage* pyrA = cvCreateImage( pyr_sz, IPL_DEPTH_32F, 1 );
 		IplImage* pyrB = cvCreateImage( pyr_sz, IPL_DEPTH_32F, 1 );
 
-		CvPoint2D32f* cornersB = new CvPoint2D32f[ MAX_CORNERS ];
+		CvPoint2D32f* cornersB = new CvPoint2D32f[ corner_count ];
 
 		cvCalcOpticalFlowPyrLK(
 				prev_gray_frame,

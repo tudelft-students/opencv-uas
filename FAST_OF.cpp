@@ -21,9 +21,6 @@
 
 using namespace std;
 
-//=== g++ `pkg-config --cflags opencv` -o test.bin main.cpp `pkg-config --libs opencv`
-//=== ./test.bin|~/open_svn/driveGnuPlots.pl 2 50 50 X Y 600x400+0+0 -
-
 //=== returns the number of usecs of (t2 - t1)
 #include <sys/time.h>
 #define USEC_PER_SEC 1000000L
